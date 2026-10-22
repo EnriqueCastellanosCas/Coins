@@ -6,12 +6,14 @@ import { ContextAutor } from '../context/ContextAutor'
 import { useNavigate } from 'react-router';
 import Typography from '@mui/material/Typography';
 import { Grid, Card, CardActionArea, CardContent, CardMedia, Box } from '@mui/material'
+import { ContextFavorites } from '../context/ContextFavorites';
 
 export const Home = () => { 
   const navigate = useNavigate();
   const {autor} = useContext(ContextAutor);
   const [coins, setCoins] = useState([]);
-
+  const {addFavorite} = useContext(ContextFavorites);
+  
   useEffect(() => {
     fetch('https://api.coingecko.com/api/v3/coins/markets?vs_currency=usd')
     .then((response) => {
@@ -52,6 +54,7 @@ export const Home = () => {
                     </Typography>
                   </CardContent>
                 </CardActionArea>
+                <button onClick={() => addFavorite(coin.id)} sx={{ backgroundColor: '#FFFFFF', color: '#FFFFFF', border: '2px solid', borderRadius: '8px', padding: '10px 20px' }}>❤︎</button>
               </Card>
             </Grid>
           ))}

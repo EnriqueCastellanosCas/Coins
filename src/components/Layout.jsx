@@ -23,6 +23,7 @@ import { useNavigate } from 'react-router';
 import { Home } from './Home';
 import { About } from './About';
 import { Detail } from './Detail';
+import { Favorites } from './Favorites';
 import { useContext } from 'react';
 import { ContextAutor } from '../context/ContextAutor';
 
@@ -165,6 +166,17 @@ export const Layout = () => {
             </ListItem>
         
         </List>
+        <Divider />
+        <List>
+
+            <ListItem disablePadding>
+              <ListItemButton onClick = {() => navigate("/favorites")}>
+                <ListItemIcon sx={{fontSize:'1.5em'}}>❤︎</ListItemIcon>
+                <ListItemText primary="Favorites" />
+              </ListItemButton>
+            </ListItem>
+        
+        </List>
       </Drawer>
       <Main open={open}>
         <DrawerHeader></DrawerHeader>
@@ -172,6 +184,7 @@ export const Layout = () => {
                 <Route path='/' element={<Home></Home>}></Route>
                 <Route path='/about' element={<About></About>}></Route>
                 <Route path='/detail/:id' element={<Detail></Detail>}></Route>
+                <Route path='/favorites' element={<Favorites></Favorites>}></Route>
             </Routes>
       </Main>
     </Box>

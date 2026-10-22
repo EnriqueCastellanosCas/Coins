@@ -39,7 +39,7 @@ export const Detail = () => {
         <Typography sx={{fontFamily:'serif', fontSize:'17px', textAlign:'justify', margin:'5px'}}><b>Abreviatura: </b>{coins.symbol?.toUpperCase()}</Typography>
         <Typography sx={{fontFamily:'serif', fontSize:'17px', textAlign:'justify', margin:'5px'}}><b>Categorías: </b>{coins.categories?.join(', ')}.</Typography>
         <Typography sx={{fontFamily:'serif', fontSize:'17px', textAlign:'justify', margin:'5px'}}>{coins.description?.en}</Typography>
-        <Typography sx={{fontFamily:'serif', fontSize:'20px', textAlign:'center', margin:'10px'}}><b>-- Valores actuales del mercado --</b></Typography>
+        <Typography sx={{fontFamily:'serif', fontSize:'20px', textAlign:'center', margin:'10px'}}><b>-- Mercado cambiario del {coins.name} --</b></Typography>
         {coins.market_data?.current_price && (
           <TableContainer component={Paper} sx={{ maxHeight: 400 }}>
             <Table>

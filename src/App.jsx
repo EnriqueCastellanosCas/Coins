@@ -1,6 +1,7 @@
 import { Layout } from "./components/Layout"
 import { BrowserRouter } from "react-router"
 import { AutorProvider } from "./context/AutorProvider"
+import { FavoritesProvider } from '../context/FavoritesProvider';
 
 function App() {
   return (

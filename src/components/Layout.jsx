@@ -100,7 +100,7 @@ export const Layout = () => {
   return (
     <Box sx={{ display: 'flex' }}>
       <CssBaseline />
-      <AppBar position="fixed" open={open}>
+      <AppBar position="fixed" open={open} sx={{bgcolor:'#00B86E'}}>
         <Toolbar>
           <IconButton
             color="inherit"
@@ -116,8 +116,8 @@ export const Layout = () => {
           >
             <MenuIcon />
           </IconButton>
-          <Typography variant="h6" noWrap component="div">
-            Coins by {autor}
+          <Typography variant="h6" noWrap component="div" sx={{fontFamily:'monospace', fontWeight:'bold'}}>
+            COINS by {autor}
           </Typography>
         </Toolbar>
       </AppBar>
